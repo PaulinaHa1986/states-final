@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US States - <%= state %></title>
+    <link rel="stylesheet" type="text/css" href="/css/state.css">
+</head>
+<body>
+    <nav class="state__nav">
+        <ul class="state__nav_items center">
+            <li class="state__nav_item p-text center">
+                <div></div>
+                <a href="./" class="p-text">
+                    ← Back Home
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container state__state center lightgreybg">
+        <div class="wrapper">
+            <div class="state__content">
+                <div class="state__header whitebg">
+                    <div class="state__flag">
+                        <img src="<%= state_flag_url %>" alt="<%= state %> Flag">
+                    </div>
+                    <div class="state__title">
+                        <h1 class="head-text"><span><%= state %></span></h1>
+                    </div>
+                </div>
+                <div class="state__info_holder center">
+                    <div class="state__card center redbg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Region</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="p-text"><%= region %></p>
+                        </div>
+                    </div>
+                    <div class="state__card center whitebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Nickname</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="p-text"><%= nickname %></p>
+                        </div>
+                    </div>
+                    <div class="state__card center bluebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Website</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <a class="p-text" href=<%= website %>><%= website %></a>
+                        </div>
+                    </div>
+                    <div class="state__card center redbg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Admission Date</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="p-text"><%= admission_date %> (# <%= admission_number %>)</p>
+                        </div>
+                    </div>
+                    <div class="state__card center whitebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Capital</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <a class="p-text" href=<%= capital_url %>><%= capital_city %></a>
+                        </div>
+                    </div>
+                    <div class="state__card center bluebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Population</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="p-text"><%= population %> (Rank: <%= population_rank %>)</p>
+                        </div>
+                    </div>
+                    <div class="state__card center redbg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Constitution</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <a class="p-text" href=<%= constitution_url %>>View Here</a>
+                        </div>
+                    </div>
+                    <div class="state__card center whitebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Twitter</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <% if (twitter_url) { %>
+                                <a class="p-text" href=<%= twitter_url %>>View Here</a>
+                            <% } else { %>
+                                <p class="p-text">None</p>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="state__card center bluebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Facebook</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <% if (facebook_url) { %>
+                                <a class="p-text" href=<%= facebook_url %>>View Here</a>
+                            <% } else { %>
+                                <p class="p-text">None</p>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="state__seals_holder center">
+                    <div class="state__seal_card center whitebg">
+                        <div class="state__seal_card_img center">
+                            <a href="<%= state_seal_url %>" class="center" target="_blank">
+                                <img src="<%= state_seal_url %>" class="center" alt="<%= state %> State Seal">
+                            </a>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="bold-text"><%= state %>'s State Seal</p>
+                        </div>
+                    </div>
+                    <div class="state__seal_card center whitebg">
+                        <div class="state__seal_card_img center">
+                            <a href="<%= map_image_url %>" class="center" target="_blank"></a>
+                            <img src="<%= map_image_url %>" class="center" alt="<%= state %> Map">
+                        </div>
+                        <div class="state__card_body">
+                            <p class="bold-text"><%= state %>'s Position on Map</p>
+                        </div>
+                    </div>
+                    <div class="state__seal_card center" style="background: url(<%= landscape_background_url %>); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                        <div class="state__seal_card_img center" >
+                        </div>
+                        <div class="state__card_body">
+                            <p class="head-text bg-text"><%= state %>'s Landscape</p>
+                        </div>
+                    </div>
+                    <div class="state__seal_card center" style="background: url(<%= skyline_background_url %>); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                        <div class="state__seal_card_img center">
+                        </div>
+                        <div class="state__card_body">
+                            <p class="head-text bg-text"><%= state %>'s Skyline</p>
+                        </div>
+                    </div>
+                    <% if (typeof funFacts !== 'undefined') { %>
+                        <div class="state__card_ff center whitebg">
+                            <div class="state__card_title center">
+                                <h2 class="bold-text">Fun Facts</h2>
+                            </div>
+                            <div class="state__card_body_ff center">
+                                <button class="states__button" id="funFact_open" onclick="funFactStart()">
+                                    Learn More!
+                                </button>
+                                <p class="p-text funFact_hide" id="funFact0"><%= funFacts.funFacts[0] %></p>
+                                <p class="p-text funFact_hide" id="funFact1"><%= funFacts.funFacts[1] %></p>
+                                <p class="p-text funFact_hide" id="funFact2"><%= funFacts.funFacts[2] %></p>
+                                <div class="state__card_body_ff_buttons center">
+                                    <button class="states__button funFact_hide" id="funFact_next" onclick="funFactNext()">
+                                        New Fun Fact
+                                    </button>
+                                    <button class="states__button funFact_hide" id="funFact_edit" onclick="funFactEdit()">
+                                        Edit Mode
+                                    </button>
+                                </div>
+                                <div class="state__edit funFact_hide" id="funFact_edit_form">
+                                    <% for (var key in funFacts.funFacts) { %>
+                                        <div class="state__edits">
+                                            <form method="get">
+                                                <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                                <input type="hidden" name="line" value=<%= key %>>
+                                                <input type="text" name="content" value="<%= funFacts.funFacts[key] %>">
+                                                <button class="states__button" type="submit" name="action" value="update">Update</button>
+                                            </form>
+                                            <form method="get">
+                                                <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                                <input type="hidden" name="line" value=<%= key %>>
+                                                <button class="states__button" type="submit" name="action" value="delete">Delete</button>
+                                            </form>
+                                        </div>
+                                    <% } %>
+                                    <!-- <div class="state__edits">
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=0>
+                                            <input type="text" name="content" value="<%= funFacts.funFacts[0] %>">
+                                            <button class="states__button" type="submit" name="action" value="update">Update</button>
+                                        </form>
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=0>
+                                            <button class="states__button" type="submit" name="action" value="delete">Delete</button>
+                                        </form>
+                                    </div>
+                                    <div class="state__edits">
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=1>
+                                            <input type="text" name="content" value="<%= funFacts.funFacts[1] %>">
+                                            <button class="states__button" type="submit" name="action" value="update">Update</button>
+                                        </form>
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=1>
+                                            <button class="states__button" type="submit" name="action" value="delete">Delete</button>
+                                        </form>
+                                    </div>
+                                    <div class="state__edits">
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=2>
+                                            <input type="text" name="content" value="<%= funFacts.funFacts[2] %>">
+                                            <button class="states__button" type="submit" name="action" value="update">Update</button>
+                                        </form>
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=2>
+                                            <button class="states__button" type="submit" name="action" value="delete">Delete</button>
+                                        </form>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    const start = document.getElementById('funFact_open');
+    const next = document.getElementById('funFact_next');
+    const edit = document.getElementById('funFact_edit');
+    const edit_form = document.getElementById('funFact_edit_form');
+    const ff0 = document.getElementById('funFact0');
+    const ff1 = document.getElementById('funFact1');
+    const ff2 = document.getElementById('funFact2');
+    
+
+    const funFactStart = () => {
+        start.classList.add('funFact_hide');
+        next.classList.remove('funFact_hide');
+        edit.classList.remove('funFact_hide');
+        var ff = Math.floor(Math.random() * 3);
+        if (ff == 0) {
+            ff0.classList.remove('funFact_hide');
+        } else if (ff == 1) {
+            ff1.classList.remove('funFact_hide');
+        } else if (ff == 2) {
+            ff2.classList.remove('funFact_hide');
+        }
+    }
+
+    const funFactNext = () => {
+        ff0.classList.add('funFact_hide');
+        ff1.classList.add('funFact_hide');
+        ff2.classList.add('funFact_hide');
+        var ff = Math.floor(Math.random() * 3);
+        if (ff == 0) {
+            ff0.classList.remove('funFact_hide');
+        } else if (ff == 1) {
+            ff1.classList.remove('funFact_hide');
+        } else if (ff == 2) {
+            ff2.classList.remove('funFact_hide');
+        }
+    }
+
+    const funFactEdit = () => {
+        edit_form.classList.remove('funFact_hide');
+    }
+
+</script>
+
+</html>

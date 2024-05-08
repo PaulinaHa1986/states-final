@@ -8,7 +8,7 @@
     "dev": "nodemon server"
   },
   "keywords": [],
-  "author": "Fin Tatum",
+  "author": "P.Habbecke",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

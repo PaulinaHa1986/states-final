@@ -1,7 +1,7 @@
 {
   "name": "backendfinal",
   "version": "1.0.0",
-  "description": "Back-End Web Development I Spring 2022",
+  "description": "Back-End Web Development",
   "main": "index.js",
   "scripts": {
     "start": "node server",
